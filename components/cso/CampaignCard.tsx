@@ -39,7 +39,7 @@ export default function CampaignCard({ campaign, onContribute }: CampaignCardPro
             <span>Goal: {formatKES(campaign.targetAmount)}</span>
             <div className="flex items-center gap-1">
               <Calendar className="w-3 h-3" />
-              <span>
+              <span suppressHydrationWarning>
                 {new Date(campaign.deadline).toLocaleDateString('en-KE', {
                   day: 'numeric',
                   month: 'short',

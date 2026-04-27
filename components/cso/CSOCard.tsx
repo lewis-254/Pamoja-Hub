@@ -66,14 +66,9 @@ export default function CSOCard({ cso }: CSOCardProps) {
           {cso.tagline}
         </p>
 
-        <Link href={`/csos/${cso.slug}`}>
-          <Button
-            size="sm"
-            className="w-full bg-pamoja-green-500 hover:bg-pamoja-green-600 text-white"
-          >
-            Donate / Support
-          </Button>
-        </Link>
+        <Button asChild size="sm" className="w-full bg-pamoja-green-500 hover:bg-pamoja-green-600 text-white">
+          <Link href={`/csos/${cso.slug}`}>Donate / Support</Link>
+        </Button>
       </div>
     </div>
   );

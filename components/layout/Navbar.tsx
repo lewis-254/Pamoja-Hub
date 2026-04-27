@@ -65,14 +65,12 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <Link href="/auth/login">
-                  <Button variant="ghost" size="sm">Log In</Button>
-                </Link>
-                <Link href="/auth/signup">
-                  <Button size="sm" className="bg-pamoja-green-500 hover:bg-pamoja-green-600 text-white">
-                    Sign Up
-                  </Button>
-                </Link>
+                <Button asChild variant="ghost" size="sm">
+                  <Link href="/auth/login">Log In</Link>
+                </Button>
+                <Button asChild size="sm" className="bg-pamoja-green-500 hover:bg-pamoja-green-600 text-white">
+                  <Link href="/auth/signup">Sign Up</Link>
+                </Button>
               </>
             )}
           </div>
@@ -104,26 +102,26 @@ export default function Navbar() {
           <div className="pt-3 border-t border-gray-100 flex flex-col gap-2">
             {user ? (
               <>
-                <Link
-                  href={user.role === 'citizen' ? '/dashboard/citizen' : '/dashboard/cso'}
-                  onClick={() => setOpen(false)}
-                >
-                  <Button variant="outline" className="w-full">Dashboard</Button>
-                </Link>
+                <Button asChild variant="outline" className="w-full">
+                  <Link
+                    href={user.role === 'citizen' ? '/dashboard/citizen' : '/dashboard/cso'}
+                    onClick={() => setOpen(false)}
+                  >
+                    Dashboard
+                  </Link>
+                </Button>
                 <Button onClick={() => { handleLogout(); setOpen(false); }} variant="ghost" className="w-full">
                   Log Out
                 </Button>
               </>
             ) : (
               <>
-                <Link href="/auth/login" onClick={() => setOpen(false)}>
-                  <Button variant="outline" className="w-full">Log In</Button>
-                </Link>
-                <Link href="/auth/signup" onClick={() => setOpen(false)}>
-                  <Button className="w-full bg-pamoja-green-500 hover:bg-pamoja-green-600 text-white">
-                    Sign Up
-                  </Button>
-                </Link>
+                <Button asChild variant="outline" className="w-full">
+                  <Link href="/auth/login" onClick={() => setOpen(false)}>Log In</Link>
+                </Button>
+                <Button asChild className="w-full bg-pamoja-green-500 hover:bg-pamoja-green-600 text-white">
+                  <Link href="/auth/signup" onClick={() => setOpen(false)}>Sign Up</Link>
+                </Button>
               </>
             )}
           </div>

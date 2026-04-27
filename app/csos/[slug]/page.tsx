@@ -50,12 +50,12 @@ export default function CSOProfilePage({ params }: Props) {
         />
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute top-4 left-4">
-          <Link href="/csos">
-            <Button variant="outline" size="sm" className="bg-white/90 backdrop-blur-sm">
+          <Button asChild variant="outline" size="sm" className="bg-white/90 backdrop-blur-sm">
+            <Link href="/csos">
               <ArrowLeft className="w-4 h-4 mr-1" />
               Back to Search
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
         <div className="absolute top-4 right-4">
           <Button
@@ -160,7 +160,7 @@ export default function CSOProfilePage({ params }: Props) {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mb-6">
               {[
-                { label: 'People Served', value: cso.stats.peopleServed.toLocaleString(), icon: Users },
+                { label: 'People Served', value: cso.stats.peopleServed.toLocaleString('en-KE'), icon: Users },
                 { label: 'Projects Completed', value: cso.stats.projectsCompleted.toString(), icon: Briefcase },
                 { label: 'Communities Active', value: cso.stats.communitiesActive.toString(), icon: Building2 },
               ].map(({ label, value, icon: Icon }) => (
